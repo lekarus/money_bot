@@ -1,0 +1,23 @@
+version: '3'
+
+volumes:
+  postgresql:
+
+services:
+  PostgreSQL:
+    restart: always
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - TZ=Europe/Moscow
+      - POSTGRES_PASSWORD=root
+    volumes:
+      - postgresql:/var/lib/postgresql
+
+
+  python_bot:
+    build: python/
+    environment:
+      - TZ=Europe/Moscow
+      - LANGUAGE=RU 
