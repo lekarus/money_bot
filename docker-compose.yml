@@ -17,6 +17,7 @@ services:
 
 
   python_bot:
+    restart: always
     build: python/
     environment:
       - TZ=Europe/Moscow

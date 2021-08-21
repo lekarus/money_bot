@@ -1,1 +1,0 @@
-worker: docker compose up
